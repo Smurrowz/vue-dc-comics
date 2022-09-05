@@ -12,7 +12,7 @@
 </script>
 <style scoped lang="scss">
   main{
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.899);
     padding: 50px 0;
     color: white;
     font-size: 2rem;

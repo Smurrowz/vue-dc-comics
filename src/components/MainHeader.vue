@@ -60,7 +60,7 @@
           justify-content: space-between;
           align-items: center;
           height: 150px;
-          gap: 10px;
+          gap: 15px;
           .nav-link {
             font-weight: 600;
             position: relative;
