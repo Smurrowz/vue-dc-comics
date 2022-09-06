@@ -7,7 +7,12 @@
 </template>
 <script>
   export default{
-    name : 'MainContent'
+    name : 'MainContent',
+    data(){
+      return{
+        
+      }
+    }
   }
 </script>
 <style scoped lang="scss">

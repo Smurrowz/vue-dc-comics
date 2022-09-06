@@ -1,48 +1,94 @@
 <template >
   <header class="container">
     <div class="logo">
-      <img src="../assets/img/dc-logo.png" alt="logo dc">
+      <img :src="logo.src" :alt="logo.alt">
     </div>
     <nav class="main-nav">
       <ul>
-        <li class="nav-link">
-          <a href="#">CHARACTERS</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">COMICS</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">MOVIES</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">TV</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">GAMES</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">COLLECTIBLES</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">VIDEOS</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">FANS</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">NEWS</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">SHOP</a>
+        <li v-for="(link, index) in navLinksArray" :class="link.current ? 'active' : ''"  :key="index" class="nav-link">
+          <a :href="link.href">{{link.name}}</a>
         </li>
       </ul>
     </nav>
   </header>
 </template>
 <script>
+  import src from '../assets/img/dc-logo.png'
   
   export default{
-    name : 'MainHeader'
+    name : 'MainHeader',
+    data () {
+      return {
+        logo:{
+          src:src,
+          alt: 'logo dc',
+        }, 
+        navLinksArray : [
+          {
+            href: '#',
+            name: 'CHARACTERS',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'COMICS',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'MOVIES',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'TV',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'GAMES',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'COLLECTIBLES',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'VIDEOS',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'FANS',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'NEWS',
+            current: false,
+
+          },
+          {
+            href: '#',
+            name: 'SHOP',
+            current: false,
+
+          },
+
+        ]
+      }
+    }
+    
   }
 </script>
 <style scoped lang="scss">
@@ -72,7 +118,7 @@
             &.active, &:hover{
                 color: $my-blue;
               }
-            &:hover::after{
+            &.active::after, &:hover::after{
               content: "";
               height: 5px;
               background-color: $my-blue;
