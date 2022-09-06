@@ -1,19 +1,18 @@
 <template >
   <main>
-    <div class="container">
-      Inserisci roba
-    </div>
+    <MainCard/>
   </main>
 </template>
 <script>
+import MainCard from './MainCard.vue';
+  
   export default{
-    name : 'MainContent',
-    data(){
-      return{
-        
-      }
-    }
-  }
+    name: "MainContent",
+    data() {
+        return {};
+    },
+    components: { MainCard }
+}
 </script>
 <style scoped lang="scss">
   main{
